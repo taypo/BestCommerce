@@ -20,6 +20,17 @@ public class Merchant {
 		this.encryptedPassword = encryptedPassword;
 	}
 
+	public Merchant(Long id, String type, String name, String ownerName, String address, String phoneNumber, String email, String encryptedPassword) {
+		this.id = id;
+		this.type = type;
+		this.name = name;
+		this.ownerName = ownerName;
+		this.address = address;
+		this.phoneNumber = phoneNumber;
+		this.email = email;
+		this.encryptedPassword = encryptedPassword;
+	}
+
 	public Long getId() {
 		return id;
 	}

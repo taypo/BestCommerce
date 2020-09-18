@@ -1,4 +1,4 @@
-package bestcommerce.apigateway.controller;
+package bestcommerce.apigateway.api.merchant;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package bestcommerce.apigateway.controller;
+package bestcommerce.apigateway.api.merchant;
 
 public class CreateMerchantRequest {
 	public String type;

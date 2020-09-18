@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class CreateMerchantController {
 
-	@PostMapping
+	@PostMapping("/merchant")
 	public void createMerchant(@RequestBody CreateMerchantRequest request) {
 
 	}

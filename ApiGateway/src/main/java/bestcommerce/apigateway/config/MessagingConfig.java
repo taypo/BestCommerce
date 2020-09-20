@@ -11,6 +11,7 @@ public class MessagingConfig {
 
 	public static final String EXCHANGE_NAME = "best.commerce";
 	public static final String CREATE_MERCHANT_KEY = "create_merchant";
+	public static final String QUERY_MERCHANT_KEY = "query_merchant";
 
 	@Bean
 	public DirectExchange directExchange() {

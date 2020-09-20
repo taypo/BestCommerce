@@ -14,7 +14,9 @@ public class MessagingConfig {
 
 	public static final String EXCHANGE_NAME = "best.commerce";
 	public static final String CREATE_MERCHANT_KEY = "create_merchant";
-	public static final String QUEUE_NAME = "create_merchant_request";
+	public static final String CREATE_MERCHANT_QUEUE_NAME = "create_merchant_request";
+	public static final String QUERY_MERCHANT_KEY = "query_merchant";
+	public static final String QUERY_MERCHANT_QUEUE_NAME = "query_merchant_request";
 
 	@Bean
 	public DirectExchange directExchange() {
@@ -23,7 +25,7 @@ public class MessagingConfig {
 
 	@Bean
 	public Queue createMerchantQueue() {
-		return new Queue(QUEUE_NAME);
+		return new Queue(CREATE_MERCHANT_QUEUE_NAME);
 	}
 
 	@Bean
@@ -31,6 +33,18 @@ public class MessagingConfig {
 		return BindingBuilder.bind(createMerchantQueue)
 				.to(directExchange)
 				.with(CREATE_MERCHANT_KEY);
+	}
+
+	@Bean
+	public Queue queryMerchantQueue() {
+		return new Queue(QUERY_MERCHANT_QUEUE_NAME);
+	}
+
+	@Bean
+	public Binding queryMerchantBinding(DirectExchange directExchange, Queue queryMerchantQueue) {
+		return BindingBuilder.bind(queryMerchantQueue)
+				.to(directExchange)
+				.with(QUERY_MERCHANT_KEY);
 	}
 
 	@Bean

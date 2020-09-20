@@ -4,7 +4,9 @@ import bestcommerce.merchant.api.CreateMerchantDTO;
 import bestcommerce.merchant.db.MerchantEntity;
 import bestcommerce.merchant.model.Merchant;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Component;
 
+@Component
 public class CreateMerchant {
 	private final MerchantRepo merchantRepo;
 	private final PasswordEncoder passwordEncoder;

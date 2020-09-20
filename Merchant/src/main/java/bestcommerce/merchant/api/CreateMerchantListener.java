@@ -19,6 +19,7 @@ public class CreateMerchantListener {
 		try {
 			return createMerchant.create(createMerchantDTO);
 		}catch (Exception e) {
+			// TODO return an error type
 			e.printStackTrace();
 		}
 		return null;

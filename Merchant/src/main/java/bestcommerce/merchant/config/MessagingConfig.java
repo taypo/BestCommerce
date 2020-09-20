@@ -13,8 +13,8 @@ import org.springframework.context.annotation.Configuration;
 public class MessagingConfig {
 
 	public static final String EXCHANGE_NAME = "best.commerce";
-	public static final String MERCHANT_KEY = "merchant";
-	public static final String QUEUE_NAME = "merchant_request";
+	public static final String CREATE_MERCHANT_KEY = "create_merchant";
+	public static final String QUEUE_NAME = "create_merchant_request";
 
 	@Bean
 	public DirectExchange directExchange() {
@@ -22,16 +22,15 @@ public class MessagingConfig {
 	}
 
 	@Bean
-	public Queue queue() {
+	public Queue createMerchantQueue() {
 		return new Queue(QUEUE_NAME);
 	}
 
 	@Bean
-	public Binding binding(DirectExchange directExchange,
-						   Queue queue) {
-		return BindingBuilder.bind(queue)
+	public Binding createMerchantBinding(DirectExchange directExchange, Queue createMerchantQueue) {
+		return BindingBuilder.bind(createMerchantQueue)
 				.to(directExchange)
-				.with(MERCHANT_KEY);
+				.with(CREATE_MERCHANT_KEY);
 	}
 
 	@Bean

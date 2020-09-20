@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class MessagingConfig {
 
 	public static final String EXCHANGE_NAME = "best.commerce";
-	public static final String MERCHANT_KEY = "merchant";
+	public static final String CREATE_MERCHANT_KEY = "create_merchant";
 
 	@Bean
 	public DirectExchange directExchange() {

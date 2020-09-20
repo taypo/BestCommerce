@@ -20,7 +20,7 @@ public class CreateMerchantController {
 	public CreateMerchantResponse createMerchant(@RequestBody CreateMerchantRequest request) {
 		CreateMerchantResponse response = template.convertSendAndReceiveAsType(
 				MessagingConfig.EXCHANGE_NAME,
-				MessagingConfig.MERCHANT_KEY,
+				MessagingConfig.CREATE_MERCHANT_KEY,
 				request,
 				new ParameterizedTypeReference<CreateMerchantResponse>() {
 				});

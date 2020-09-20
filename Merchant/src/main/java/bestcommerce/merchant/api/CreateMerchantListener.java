@@ -14,7 +14,7 @@ public class CreateMerchantListener {
 		this.createMerchant = createMerchant;
 	}
 
-	@RabbitListener(queues = "#{queue.name}")
+	@RabbitListener(queues = "#{createMerchantQueue.name}")
 	public Merchant createMerchant(CreateMerchantDTO createMerchantDTO) {
 		try {
 			return createMerchant.create(createMerchantDTO);

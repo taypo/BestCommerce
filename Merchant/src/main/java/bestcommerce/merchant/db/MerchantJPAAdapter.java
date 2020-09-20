@@ -1,7 +1,7 @@
 package bestcommerce.merchant.db;
 
 import bestcommerce.merchant.model.Merchant;
-import bestcommerce.merchant.usecase.MerchantRepo;
+import bestcommerce.merchant.usecase.support.MerchantRepo;
 import org.springframework.stereotype.Component;
 
 import java.util.Optional;

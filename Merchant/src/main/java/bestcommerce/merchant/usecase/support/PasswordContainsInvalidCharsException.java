@@ -1,4 +1,4 @@
-package bestcommerce.merchant.usecase;
+package bestcommerce.merchant.usecase.support;
 
 public class PasswordContainsInvalidCharsException extends RuntimeException {
 }

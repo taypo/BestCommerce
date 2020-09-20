@@ -2,6 +2,9 @@ package bestcommerce.merchant.usecase;
 
 import bestcommerce.merchant.api.QueryMerchantDTO;
 import bestcommerce.merchant.model.Merchant;
+import bestcommerce.merchant.usecase.support.InvalidPasswordException;
+import bestcommerce.merchant.usecase.support.MerchantNotFoundException;
+import bestcommerce.merchant.usecase.support.MerchantRepo;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 

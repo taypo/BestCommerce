@@ -3,6 +3,9 @@ package bestcommerce.merchant.usecase;
 import bestcommerce.merchant.api.CreateMerchantDTO;
 import bestcommerce.merchant.db.MerchantEntity;
 import bestcommerce.merchant.model.Merchant;
+import bestcommerce.merchant.usecase.support.MerchantRepo;
+import bestcommerce.merchant.usecase.support.PasswordContainsInvalidCharsException;
+import bestcommerce.merchant.usecase.support.PasswordTooShortException;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 

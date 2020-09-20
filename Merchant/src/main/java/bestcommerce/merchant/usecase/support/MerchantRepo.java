@@ -1,4 +1,4 @@
-package bestcommerce.merchant.usecase;
+package bestcommerce.merchant.usecase.support;
 
 import bestcommerce.merchant.db.MerchantEntity;
 import bestcommerce.merchant.model.Merchant;

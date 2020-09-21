@@ -5,6 +5,7 @@ import bestcommerce.apigateway.jwt.TokenService;
 import bestcommerce.apigateway.messaging.Merchant;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.core.ParameterizedTypeReference;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
@@ -21,7 +22,7 @@ public class AuthenticationController {
 	}
 
 	@PostMapping("/authenticate")
-	public AuthenticationResponse authenticate(@RequestBody AuthenticationRequest request) {
+	public ResponseEntity<AuthenticationResponse> authenticate(@RequestBody AuthenticationRequest request) {
 		Merchant merchant = template.convertSendAndReceiveAsType(
 				MessagingConfig.EXCHANGE_NAME,
 				MessagingConfig.QUERY_MERCHANT_KEY,
@@ -29,8 +30,11 @@ public class AuthenticationController {
 				new ParameterizedTypeReference<Merchant>() {
 				});
 
+		if(merchant == null) {
+			return ResponseEntity.badRequest().build();
+		}
 		AuthenticationResponse response = new AuthenticationResponse();
 		response.token = tokenService.generate(merchant, request.rememberMe);
-		return response;
+		return ResponseEntity.ok(response);
 	}
 }

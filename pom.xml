@@ -20,7 +20,26 @@
 
 	<properties>
 		<java.version>1.8</java.version>
+		<jib.version>2.5.2</jib.version>
+		<docker.base>localhost:5000</docker.base>
 	</properties>
 
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>com.google.cloud.tools</groupId>
+					<artifactId>jib-maven-plugin</artifactId>
+					<version>${jib.version}</version>
+					<configuration>
+						<allowInsecureRegistries>true</allowInsecureRegistries>
+						<from>
+							<image>openjdk:8u265-jdk</image>
+						</from>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
 
 </project>

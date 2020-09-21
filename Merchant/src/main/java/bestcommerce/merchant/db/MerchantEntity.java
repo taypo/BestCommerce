@@ -19,6 +19,9 @@ public class MerchantEntity {
 	private String email;
 	private String encryptedPassword;
 
+	public MerchantEntity() {
+	}
+
 	public MerchantEntity(String type, String name, String ownerName, String address, String phoneNumber, String email, String encryptedPassword) {
 		this.type = type;
 		this.name = name;
